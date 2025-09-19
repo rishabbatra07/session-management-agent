@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  backend:
+    build: ./controller
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  worker:
+    build: ./tasks
+    command: python worker.py
+    depends_on:
+      - redis
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
