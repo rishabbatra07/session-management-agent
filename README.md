@@ -1,10 +1,6 @@
 # Author: Rishab Batra (rishabbatra07@gmail.com)
 # Computer Use Demo (FastAPI + Worker + Frontend)
 
-https://energent.notion.site/CambioML-Senior-Backend-DevOps-Engineer-Coding-Challenge-Claude-Computer-Use-212613d0ce738084b03ded0b2137ddc3
-
-This project is adapted from the Anthropics [computer-use-demo quickstart](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo).
-
 ## Features
 - FastAPI backend providing session APIs (start session, send message)
 - Real-time progress streaming via WebSocket & SSE endpoints
